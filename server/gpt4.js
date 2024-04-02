@@ -1,17 +1,19 @@
-const openAI = require('openai');
-const openAIKey = process.argv[0]
+const OpenAI = require("openai");
+const openai = new OpenAI({
+  apiKey: process.argv[2],
+});
 
-// async function main() {
-//     const completion = await openai.chat.completions.create({
-//       messages: [{"role": "system", "content": "You are a helpful assistant."},
-//           {"role": "user", "content": "Who won the world series in 2020?"},
-//           {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-//           {"role": "user", "content": "Where was it played?"}],
-//       model: "gpt-3.5-turbo",
-//     });
-  
-//     console.log(completion.choices[0]);
-//   }
-//   main();
+async function main() {
+  const completion = await openai.chat.completions.create({
+    messages: [
+      { role: "system", content: "You are a helpful assistant." },
+      { role: "user", content: "what are the new features gpt-4 added that gpt 3.5 does not have?" },
+    ],
+    model: "gpt-4-turbo-preview",
+  });
 
-console.log('bean boi')
+  console.log(completion.choices[0]);
+}
+main();
+
+// console.log(process.argv[2]);
