@@ -3,10 +3,14 @@ const app = express();
 
 
 const { textChat } = require("./gpt4");
-
 // textChat('whats poppin today my dude?')
+app.use(express.static('../client/dist'))
 
 
+
+app.get('/', (req, res) => {
+    res.sendFile('.index.html')
+})
 
 
 
