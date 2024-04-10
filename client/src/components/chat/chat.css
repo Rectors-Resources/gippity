@@ -1,0 +1,30 @@
+form {
+    position: relative;
+    text-align: center;
+}   
+textarea {
+    width: 50%;
+    resize: none;
+}
+.chat-container {
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    height: 100%;
+    text-align: center;
+
+
+    background-color: hsla(0, 0, 0, 0.9);
+}
+.conversation {
+    overflow-y: scroll;
+    
+    scroll-behavior: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.conversation > p {
+    max-width: 50%;
+}
+.chat-box > p {
+    padding: 1rem;
+}
